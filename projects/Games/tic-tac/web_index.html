@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="tictac.css">
+<title>Tic-Tac-Toe</title>
+<script>
+
+function newGame(){
+    document.getElementById('message').innerHTML = "";
+    clearRows();
+    randomst();
+};    
+    
+var table = document.getElementsByTagName("td");
+function fixTable() {
+}
+function check() {
+ <!--//Main Source for tic tac toe-->
+ <!-- p1 -->
+ if ((table[0].innerHTML == "O" || table[0].innerHTML == "X") &&
+    (table[1].innerHTML == "O" || table[1].innerHTML == "X") &&
+    (table[2].innerHTML == "O" || table[2].innerHTML == "X") &&
+    (table[3].innerHTML == "O" || table[3].innerHTML == "X") &&
+    (table[4].innerHTML == "O" || table[4].innerHTML == "X") &&
+    (table[5].innerHTML == "O" || table[5].innerHTML == "X") &&
+    (table[6].innerHTML == "O" || table[6].innerHTML == "X") &&
+    (table[7].innerHTML == "O" || table[7].innerHTML == "X") &&
+    (table[8].innerHTML == "O" || table[8].innerHTML == "X"))
+    {
+        document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><br/>Nobody Wins..So Lame!<br/> Click to play again<br/><br/><br/><br/><br/><br/><br/><br/>";
+    }   
+ if (table[0].innerHTML == "X" && table[1].innerHTML == "X" && table[2].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[1].className = "threeDW";
+     table[2].className = "threeDW";
+ }
+ if (table[3].innerHTML == "X" && table[4].innerHTML == "X" && table[5].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[3].className = "threeDW";
+     table[4].className = "threeDW";
+     table[5].className = "threeDW";
+ }
+ if (table[6].innerHTML == "X" && table[7].innerHTML == "X" && table[8].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[6].className = "threeDW";
+     table[7].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[0].innerHTML == "X" && table[3].innerHTML == "X" && table[6].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[3].className = "threeDW";
+     table[6].className = "threeDW";
+ }
+ if (table[1].innerHTML == "X" && table[4].innerHTML == "X" && table[7].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[1].className = "threeDW";
+     table[4].className = "threeDW";
+     table[7].className = "threeDW";
+ }
+ if (table[2].innerHTML == "X" && table[5].innerHTML == "X" && table[8].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[2].className = "threeDW";
+     table[5].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[0].innerHTML == "X" && table[4].innerHTML == "X" && table[8].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[4].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[2].innerHTML == "X" && table[4].innerHTML == "X" && table[6].innerHTML == "X") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>X</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[2].className = "threeDW";
+     table[4].className = "threeDW";
+     table[6].className = "threeDW";
+ }
+ <!-- p2 -->
+ if (table[0].innerHTML == "O" && table[1].innerHTML == "O" && table[2].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[1].className = "threeDW";
+     table[2].className = "threeDW";   
+ }
+ if (table[3].innerHTML == "O" && table[4].innerHTML == "O" && table[5].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[3].className = "threeDW";
+     table[4].className = "threeDW";
+     table[5].className = "threeDW";
+ }
+ if (table[6].innerHTML == "O" && table[7].innerHTML == "O" && table[8].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[6].className = "threeDW";
+     table[7].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[0].innerHTML == "O" && table[3].innerHTML == "O" && table[6].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[3].className = "threeDW";
+     table[6].className = "threeDW";
+ }
+ if (table[1].innerHTML == "O" && table[4].innerHTML == "O" && table[7].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[1].className = "threeDW";
+     table[4].className = "threeDW";
+     table[7].className = "threeDW";
+ }
+ if (table[2].innerHTML == "O" && table[5].innerHTML == "O" && table[8].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[2].className = "threeDW";
+     table[5].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[0].innerHTML == "O" && table[4].innerHTML == "O" && table[8].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[0].className = "threeDW";
+     table[4].className = "threeDW";
+     table[8].className = "threeDW";
+ }
+ if (table[2].innerHTML == "O" && table[4].innerHTML == "O" && table[6].innerHTML == "O") {
+     document.getElementById('message').innerHTML = "<br/><br/><br/><br/><br/><b>O</b>'s Wins! <br/> Nice moves! <br/> Click to play again<br/><br/><br/><br/><br/><br/><br/>";
+     table[2].className = "threeDW";
+     table[4].className = "threeDW";
+     table[6].className = "threeDW";}
+ 
+
+}
+
+function clearRows() {
+ for (var i=0; i < table.length; i++) {
+ table[i].innerHTML = "&nbsp;";
+ }
+}
+function replaceName() {
+var div = document.getElementById("pl");
+ 
+   if (document.forms[0].val.value == "player1") {
+   div.innerHTML = "<b>X</b>'s turn"
+   }
+   if (document.forms[0].val.value == "player2") {
+   div.innerHTML = "<b>O</b>'s turn"
+   }
+ 
+}
+function randomst() {
+ var x = Math.floor(Math.random() * 5);
+if (x == 0 || x == 1 || x == 2) {
+document.forms[0].val.value = "player1"
+}
+else if (x == 3 || x == 4 || x == 5) {
+document.forms[0].val.value = "player2"
+}
+else {
+document.forms[0].val.value = "player2"
+}
+ 
+};
+
+function placeMark(id){
+    if(document.forms[0].val.value == 'player1' && document.getElementById(id).innerHTML != 'X' && document.getElementById(id).innerHTML != 'O')
+    {
+        document.getElementById(id).innerHTML = 'X';
+        document.getElementById(id).className = "threeDX";
+        document.forms[0].val.value = 'player2'
+    } 
+        else if(document.forms[0].val.value == 'player2' && document.getElementById(id).innerHTML != 'X' && document.getElementById(id).innerHTML != 'O')
+    {
+        document.getElementById(id).innerHTML = 'O';
+        document.getElementById(id).className = "threeDO";
+        document.forms[0].val.value = 'player1'
+    } 
+    check();
+    replaceName();
+};
+//-->
+</script>
+</head>
+<body onLoad="fixTable();randomst();replaceName()">
+
+<!--Table-->
+<form action="#" method="get">
+<input type="hidden" value="player1" name="val">
+</form>
+<div id="title">TIC | TAC | TOE<br></div>
+<table id="gameboard" align="center" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td id="0" onClick="placeMark(0);" width="132" height="132">&nbsp;</td>
+<td id="1" onClick="placeMark(1);" width="132" height="132">&nbsp;</td>
+<td id="2" onClick="placeMark(2);" width="132" height="132">&nbsp;</td>
+</tr>
+<tr>
+<td id="3" onClick="placeMark(3);" width="132" height="132">&nbsp;</td>
+<td id="4" onClick="placeMark(4);" width="132" height="132">&nbsp;</td>
+<td id="5" onClick="placeMark(5);" width="132" height="132">&nbsp;</td>
+</tr>
+<tr>
+<td id="6" onClick="placeMark(6);" width="132" height="132">&nbsp;</td>
+<td id="7" onClick="placeMark(7);" width="132" height="132">&nbsp;</td>
+<td id="8" onClick="placeMark(8);" width="132" height="132">&nbsp;</td>
+</tr>
+</table>
+        <div id="divboard">
+        <table id="checkerboard" align="center" cellpadding="10" cellspacing="0" border="0">
+            <tr>
+            <td width="132" height="132">&nbsp;</td>
+            <td class="leftright" width="132" height="132">&nbsp;</td>
+            <td width="132" height="132">&nbsp;</td> 
+            </tr>
+            <tr>
+            <td class="topbottom" width="132" height="132">&nbsp;</td>
+            <td class="leftright topbottom" width="132" height="132">&nbsp;</td>
+            <td class="topbottom" width="132" height="132">&nbsp;</td>
+            </tr>
+            <tr>
+            <td width="132" height="132">&nbsp;</td>
+            <td class="leftright" width="132" height="132">&nbsp;</td>
+            <td width="132" height="132">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+     <br/>
+<div id="pl" style="font-family:Arial;text-align:center;font-size:30px">&nbsp;</div>
+     <br/>
+    <div class="buttondiv"><button onClick="newGame()">New Game</button></div>
+   <div id="message" onClick="newGame();"></div>
+    
+</body>
+</html>
